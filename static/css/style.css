@@ -37,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     border-right: 1px solid var(--border-color);
-    gap: 30px;
+    gap: 20px; /* Reduced gap to save space */
 }
 
 .logo h1 {
@@ -136,6 +136,7 @@ button {
     overflow-y: auto;
     font-family: monospace;
     font-size: 14px;
+    min-height: 120px; /* Ensure it's always visible */
 }
 
 .log-entry {
