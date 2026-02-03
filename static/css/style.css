@@ -160,3 +160,55 @@ button {
     width: 100%;
     height: 100%;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 15px;
+        order: 1; 
+        max-height: 45vh;
+        overflow-y: auto;
+    }
+
+    .main-content {
+        order: 2;
+        height: 55vh;
+        width: 100%;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    .input-row {
+        flex-wrap: wrap;
+    }
+
+    input, select, button {
+        font-size: 16px; /* Better for touch */
+        min-height: 44px; /* Touch target size */
+    }
+
+    /* Fix checkbox scaling */
+    input[type="checkbox"] {
+        min-height: unset;
+        width: 19px;
+        height: 19px;
+        margin-top: 15px;
+    }
+
+    /* Ensure log panel is visible */
+    .log-panel {
+        min-height: 150px;
+        max-height: 200px; /* Prevent it from taking over too much */
+    }
+}
