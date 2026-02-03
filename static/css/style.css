@@ -37,7 +37,9 @@ body {
     display: flex;
     flex-direction: column;
     border-right: 1px solid var(--border-color);
-    gap: 20px; /* Reduced gap to save space */
+    gap: 20px;
+    overflow-y: auto; /* Enable scrolling for sidebar content */
+    height: 100%;
 }
 
 .logo h1 {
