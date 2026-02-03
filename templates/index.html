@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphWiz - Graph Traversal Visualizer</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Cytoscape.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Controls -->
+        <div class="sidebar">
+            <div class="logo">
+                <h1>GraphWiz</h1>
+                <p>BFS & DFS Visualizer</p>
+            </div>
+
+            <div class="control-group">
+                <h3>Graph Controls</h3>
+                <div class="input-row">
+                    <input type="text" id="node-name" placeholder="Node Name (e.g., A)" maxlength="3">
+                    <button class="btn-primary" id="add-node-btn">Add Node</button>
+                </div>
+                <div class="input-row">
+                    <input type="text" id="edge-source" placeholder="Source" maxlength="3">
+                    <input type="text" id="edge-target" placeholder="Target" maxlength="3">
+                    <button class="btn-primary" id="add-edge-btn">Add Edge</button>
+                </div>
+                <div class="checkbox-row">
+                    <p style="font-size: 12px; color: #94a3b8; margin-bottom: 5px;">Select node/edge on graph to remove
+                    </p>
+                    <button class="btn-danger" id="remove-selected-btn">Remove Selected</button>
+                </div>
+                <!-- Random Graph -->
+                <div class="checkbox-row">
+                    <button class="btn-primary" id="random-graph-btn" style="background-color: #8b5cf6;">Generate Random
+                        Graph</button>
+                </div>
+                <!-- Speed Control -->
+                <div class="control-group" style="border: none; padding: 0;">
+                    <h3 style="margin-bottom: 5px;">Animation Speed</h3>
+                    <input type="range" id="speed-slider" min="100" max="2000" value="800" step="100"
+                        style="width: 100%;">
+                    <p style="font-size: 11px; color: #94a3b8; text-align: right;">(Slow <-> Fast)</p>
+                </div>
+
+                <div class="checkbox-row">
+                    <label>
+                        <input type="checkbox" id="directed-checkbox"> Directed Graph
+                    </label>
+                </div>
+                <button class="btn-danger" id="clear-graph-btn">Clear Graph</button>
+            </div>
+
+            <div class="control-group">
+                <h3>Algorithm</h3>
+                <div class="select-row">
+                    <select id="algorithm-select">
+                        <option value="bfs">Breadth First Search (BFS)</option>
+                        <option value="dfs">Depth First Search (DFS)</option>
+                    </select>
+                </div>
+                <div class="input-row">
+                    <input type="text" id="start-node" placeholder="Start Node" maxlength="3">
+                    <button class="btn-success" id="run-btn">Run</button>
+                </div>
+            </div>
+
+            <div class="log-panel">
+                <h3>Traversal Log</h3>
+                <div id="log-content"></div>
+            </div>
+        </div>
+
+        <!-- Main Canvas -->
+        <div class="main-content">
+            <div id="cy"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
