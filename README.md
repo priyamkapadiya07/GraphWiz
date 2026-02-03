@@ -1,4 +1,8 @@
-# Graph Traversal Visualizer (BFS & DFS)
+# GraphWiz - Graph Traversal Visualizer
+
+![GraphWiz Demo](static/images/Demo.png)
+
+[🚀 **Live Demo**](https://graphwiz-two.vercel.app/)
 
 A premium, interactive Web Application for visualizing Graph Traversal algorithms. Built with **Python (Flask)** and **Cytoscape.js**, this project provides a dynamic way to understand Breadth First Search (BFS) and Depth First Search (DFS).
 
@@ -27,8 +31,8 @@ A premium, interactive Web Application for visualizing Graph Traversal algorithm
 ## 📦 Installation & Setup
 
 1.  **Clone/Navigate to the directory**:
-    ```bash
-    cd "c:/COLLAGE PROJECT/SEM-5 PROJECT/DAA/Graph_Traversal_Web"
+    git clone https://github.com/priyamkapadiya07/GraphWiz.git
+    cd GraphWiz
     ```
 
 2.  **Install Dependencies**:
