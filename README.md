@@ -31,6 +31,7 @@ A premium, interactive Web Application for visualizing Graph Traversal algorithm
 ## 📦 Installation & Setup
 
 1.  **Clone/Navigate to the directory**:
+    ```bash
     git clone https://github.com/priyamkapadiya07/GraphWiz.git
     cd GraphWiz
     ```
