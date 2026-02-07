@@ -54,20 +54,12 @@ def index():
 def get_traversal():
     try:
         data = request.json
-        graph_data = data.get('graph', {}) # { 'A': ['B', 'C'], ... }
+        graph_data = data.get('graph', {})
         start_node = data.get('startNode')
-        algorithm = data.get('algorithm') # 'bfs' or 'dfs'
-        
-        # Convert list of edges to adjacency list if needed, or assume frontend sends adjacency list
-        # To make it robust, let's assume the frontend sends nodes and edges 
-        # But actually, constructing the adjacency list on the backend from simplified data is easier
-        
-        # Let's expect the frontend to send the adjacency list directly as it's easier to manage logic there
-        # OR better: Frontend sends { nodes: [...], edges: [{source, target}, ...] }
-        # Let's convert Cytoscape JSON to Adjacency List
+        algorithm = data.get('algorithm')
         
         nodes = data.get('nodes', [])
-        edges = data.get('edges', []) # [{ 'source': 'A', 'target': 'B' }, ...]
+        edges = data.get('edges', [])
         is_directed = data.get('isDirected', False)
         
         adj_list = {node['id']: [] for node in nodes}
